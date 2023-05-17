@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
     const {createUerWithEmail} = useContext(AuthContext);
@@ -18,12 +19,27 @@ const SignUp = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
-            form.reset()
+            form.reset();
+            updateUser(result.user, name, photo)
         })
         .catch(error =>{
             console.log(error);
         })
     }
+
+    const updateUser = (user, name, photo) =>{
+        updateProfile(user, {
+            displayName: name,
+            photoURL: photo
+        })
+        .then(result => {
+            alert('succelfully updated')
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">

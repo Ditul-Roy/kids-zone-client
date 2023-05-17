@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const LogIn = () => {
     const {loggedUserWithEmail} = useContext(AuthContext)
