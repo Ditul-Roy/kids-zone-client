@@ -6,7 +6,7 @@ const Banner = () => {
             <div className="carousel w-full my-10">
                 <div id="slide1" className="carousel-item relative w-full ">
                     <img src={'https://i.ibb.co/qg0bkzJ/images-q-tbn-ANd9-Gc-Tnbevu-Ucr-Cb-DCMM-7-T4j-XLvw-QOQt-LERp-L4-g-usqp-CAU.jpg'} className="w-full rounded" />
-                    <div className="absolute h-full text-white left-0 top-0 ps-4 pt-16 pe-32 pb-8 bg-gradient-to-r from-[#191919] to-[rgba(255, 99, 71, 0.4)] ">
+                    <div className="absolute h-full text-white left-0 top-0 ps-4 pt-16 pe-32 pb-8 bg-gradient-to-r from-[#151515] to-[rgba(255, 99, 71)] ">
                         <h1 className='text-6xl text-bold my-4'>Your first choice in our marketplace</h1>
                         <p className='text-xl text-green-400'>we are provide toy for your children. We have many toy in our collection. like police cars toy, genaral type cars toy, electric bike toy, bus, truck, tractor etc. So your first choice in our marketplace.</p>
                         <button className='btn btn-primary my-4'>get started</button>
