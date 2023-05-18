@@ -23,7 +23,7 @@ const Navbar = () => {
                         {
                             user ? <>
                                 <li className='text-xl text-slate-800'><Link to='/'>My cars</Link></li>
-                                <li className='text-xl text-slate-800'><Link to='/'>Add cars</Link></li>
+                                <li className='text-xl text-slate-800'><Link to='/addcar'>Add cars</Link></li>
                                 <img className='h-12 w-12' src={user.photoURL} title={user.displayName} alt="" />
                                 <li><button onClick={handleLogout} className='btn text-white'>LogOut</button></li>
                             </> :  <Link className='btn lg:ms-80' to='/login'>Log in</Link>

@@ -11,12 +11,17 @@ const Toys = () => {
     return (
         <div>
             <div className=" w-full my-10">
+                <div className='flex justify-end'>
+                    <input type="text" placeholder="Search" className="input input-bordered" />
+                    <input type="submit" value="serch" className='btn btn-ghost' />
+                </div>
                 <table className="table w-full ">
                     {/* head */}
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
+                            <th>Seller</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Status</th>
