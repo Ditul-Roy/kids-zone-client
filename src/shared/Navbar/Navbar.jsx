@@ -18,7 +18,7 @@ const Navbar = () => {
                 <div className="navbar-center lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li className='text-xl text-slate-800'><Link to='/'>Home</Link></li>
-                        <li className='text-xl text-slate-800'><Link to='/'>All cars</Link></li>
+                        <li className='text-xl text-slate-800'><Link to='/toys'>All cars</Link></li>
                         <li className='text-xl text-slate-800'><Link to='/'>blog</Link></li>
                         {
                             user ? <>

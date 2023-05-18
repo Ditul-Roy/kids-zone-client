@@ -10,6 +10,7 @@ import Main from './Layout/Main';
 import LogIn from './pages/Login/LogIn/LogIn';
 import SignUp from './pages/Login/SignUp/SignUp';
 import AuthProvider from './AuthProvideer/AuthProvider';
+import Toys from './pages/Toy/Toys/Toys';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/toys',
+        element: <Toys></Toys>
       },
       {
         path: '/login',
