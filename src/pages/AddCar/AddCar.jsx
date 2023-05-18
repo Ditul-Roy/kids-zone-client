@@ -1,6 +1,9 @@
 import React from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const AddCar = () => {
+    const navigate = useNavigate()
+
     const handleAddToCar = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -27,6 +30,9 @@ const AddCar = () => {
         .then(data =>{
             console.log(data);
             alert('new car added')
+            navigate('/')
+            
+            
         })
     }
 

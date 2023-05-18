@@ -1,15 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const MyCarCart = ({ userCar }) => {
-    console.log(userCar);
-    const { img, name, price, quantity } = userCar;
+const MyCarCart = ({ userCar, handleDeleteCar }) => {
+    // console.log(userCar);
+    
+    const { _id, img, name, price, quantity } = userCar;
     return (
         <tr>
-            <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-            </th>
             <td>
                 <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
@@ -27,7 +24,8 @@ const MyCarCart = ({ userCar }) => {
             </td>
             <td>{price}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <Link to={`/update/${_id}`}><button className="btn btn-ghost btn-xs">u</button></Link>
+                <button onClick={(()=>handleDeleteCar(_id))} className="btn btn-ghost btn-xs">d</button>
             </th>
         </tr >
     );
