@@ -6,12 +6,12 @@ const Tabs = () => {
         settoggle(id)
     }
     return (
-        <div className='border-slate-900 border-2 rounded my-8  py-10'>
+        <div className='border-slate-900 border-2 rounded my-8'>
             <div>
                 <ul className='flex justify-end bg-gray-200 px-8 py-4'>
-                    <li className='me-10  text-xl'><button onClick={()=>handleUpdateToggle(1)}>Police car</button></li>
-                    <li className='me-10 text-xl'> <button onClick={()=>handleUpdateToggle(2)}>Bus</button></li>
-                    <li className='me-10 text-xl'><button onClick={()=>handleUpdateToggle(3)}>truck</button></li>
+                    <li className='me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '><button onClick={()=>handleUpdateToggle(1)}>Police car</button></li>
+                    <li className='me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '> <button onClick={()=>handleUpdateToggle(2)}>Bus</button></li>
+                    <li className='me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '><button onClick={()=>handleUpdateToggle(3)}>truck</button></li>
                 </ul>
             </div>
             <div className={toggle === 1 ? 'block' : 'hidden'}>
