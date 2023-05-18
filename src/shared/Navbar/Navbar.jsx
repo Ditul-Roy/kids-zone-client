@@ -22,7 +22,7 @@ const Navbar = () => {
                         <li className='text-xl text-slate-800'><Link to='/'>blog</Link></li>
                         {
                             user ? <>
-                                <li className='text-xl text-slate-800'><Link to='/'>My cars</Link></li>
+                                <li className='text-xl text-slate-800'><Link to='/mycar'>My cars</Link></li>
                                 <li className='text-xl text-slate-800'><Link to='/addcar'>Add cars</Link></li>
                                 <img className='h-12 w-12' src={user.photoURL} title={user.displayName} alt="" />
                                 <li><button onClick={handleLogout} className='btn text-white'>LogOut</button></li>

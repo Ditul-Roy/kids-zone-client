@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ToyCart = ({ toy }) => {
-    console.log(toy);
+    // console.log(toy);
     const {_id, seller_name, img, name, price, quantity } = toy;
     return (
         <tr>

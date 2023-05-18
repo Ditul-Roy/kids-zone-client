@@ -12,6 +12,8 @@ import SignUp from './pages/Login/SignUp/SignUp';
 import AuthProvider from './AuthProvideer/AuthProvider';
 import Toys from './pages/Toy/Toys/Toys';
 import AddCar from './pages/AddCar/AddCar';
+import MyCar from './pages/MyCar/Mycar/MyCar';
+import PrivateRoutes from './Routes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/addcar',
         element: <AddCar></AddCar>
+      },
+      {
+        path: '/mycar',
+        element: <PrivateRoutes><MyCar></MyCar></PrivateRoutes>
       },
       {
         path: '/login',

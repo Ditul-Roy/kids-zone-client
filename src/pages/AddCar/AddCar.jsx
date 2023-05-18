@@ -4,7 +4,7 @@ const AddCar = () => {
     const handleAddToCar = (event) => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
+        const name = form.car_name.value;
         const seller_name = form.seller_name.value;
         const email = form.email.value;
         const category = form.category.value;
@@ -13,9 +13,21 @@ const AddCar = () => {
         const quantity = form.quantity.value;
         const details = form.details.value;
         const img = form.img.value;
-        const userCar = {name, seller_name, email, category, price, rating, quantity, details, img};
-        console.log(userCar);
+        const newCar = {name, seller_name, email, category, price, rating, quantity, details, img};
+        console.log(newCar);
 
+        fetch('http://localhost:5000/cars', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newCar)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            alert('new car added')
+        })
     }
 
     return (
@@ -30,7 +42,7 @@ const AddCar = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" placeholder="name" name='name' className="input input-bordered" />
+                                    <input type="text" placeholder="name" name='car_name' className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
