@@ -18,13 +18,13 @@ const Toys = () => {
                 <table className="table w-full ">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='py-8'>
                             <th></th>
-                            <th>Name</th>
-                            <th>Seller</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Status</th>
+                            <th className='hover:bg-gray-400 p-4 rounded hover:text-white'>Name</th>
+                            <th className='hover:bg-gray-400 p-4 rounded hover:text-white'>Seller</th>
+                            <th className='hover:bg-gray-400 p-4 rounded hover:text-white'>Price</th>
+                            <th className='hover:bg-gray-400 p-4 rounded hover:text-white'>Quantity</th>
+                            <th className='hover:bg-gray-400 p-4 rounded hover:text-white'>Status</th>
                         </tr>
                     </thead>
                     <tbody >
