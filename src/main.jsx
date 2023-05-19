@@ -17,6 +17,7 @@ import PrivateRoutes from './Routes/PrivateRoutes';
 import UpdateCar from './pages/MyCar/UpdateCar/UpdateCar';
 import ToyDetails from './pages/Toy/ToyDetails/ToyDetails';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import Blog from './pages/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignUp></SignUp>
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
       }
     ]
   },

@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
 import MyCarCart from '../MycarCart/MyCarCart';
+import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
 
 const MyCar = () => {
     const { user } = useContext(AuthContext);
     const [userCars, setUserCars] = useState([]);
+    useTitleBar('my car')
 
     useEffect(() => {
         fetch(`http://localhost:5000/cars?email=${user.email}`)

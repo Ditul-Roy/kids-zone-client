@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
+import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
 
 const LogIn = () => {
     const {loggedUserWithEmail} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location?.state?.from?.pathname || '/'
+    const from = location?.state?.from?.pathname || '/';
+    useTitleBar('login')
 
     const handleLogin = event => {
         event.preventDefault();

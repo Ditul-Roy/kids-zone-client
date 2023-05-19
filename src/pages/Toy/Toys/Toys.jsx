@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ToyCart from '../ToyCart/ToyCart';
+import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
 
 const Toys = () => {
     const [toys, setToys] = useState([]);
@@ -10,6 +11,7 @@ const Toys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
+    useTitleBar('all cars')
 
     const handleChange = event =>{
         const name = event.target.value;

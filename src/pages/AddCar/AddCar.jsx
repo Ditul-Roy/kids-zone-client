@@ -1,8 +1,10 @@
 import React from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import useTitleBar from '../../shared/TitleBar/UseTitleBar';
 
 const AddCar = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    useTitleBar('add cart')
 
     const handleAddToCar = (event) => {
         event.preventDefault();

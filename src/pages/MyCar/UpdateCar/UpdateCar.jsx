@@ -1,10 +1,12 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
 
 const UpdateCar = () => {
     const carstoy = useLoaderData();
     console.log(carstoy);
     const {_id, price, quantity, details} = carstoy;
+    useTitleBar('update car')
 
     const handleUpdateCar = (event) => {
         event.preventDefault();

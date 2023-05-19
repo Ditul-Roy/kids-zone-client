@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvideer/AuthProvider';
 
 const Navbar = () => {
@@ -17,13 +17,13 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='text-xl text-slate-800'><Link to='/'>Home</Link></li>
-                        <li className='text-xl text-slate-800'><Link to='/toys'>All cars</Link></li>
-                        <li className='text-xl text-slate-800'><Link to='/'>blog</Link></li>
+                        <li className='text-xl text-slate-800'><NavLink to='/'>Home</NavLink></li>
+                        <li className='text-xl text-slate-800'><NavLink to='/toys'>All cars</NavLink></li>
+                        <li className='text-xl text-slate-800'><NavLink to='/blog'>blog</NavLink></li>
                         {
                             user ? <>
-                                <li className='text-xl text-slate-800'><Link to='/mycar'>My cars</Link></li>
-                                <li className='text-xl text-slate-800'><Link to='/addcar'>Add cars</Link></li>
+                                <li className='text-xl text-slate-800'><NavLink to='/mycar'>My cars</NavLink></li>
+                                <li className='text-xl text-slate-800'><NavLink to='/addcar'>Add cars</NavLink></li>
                                 <img className='h-12 w-12' src={user.photoURL} title={user.displayName} alt="" />
                                 <li><button onClick={handleLogout} className='btn text-white'>LogOut</button></li>
                             </> :  <Link className='btn lg:ms-80' to='/login'>Log in</Link>

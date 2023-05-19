@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
 
 const SignUp = () => {
     const {createUerWithEmail} = useContext(AuthContext);
-
+    useTitleBar('signup')
     const handleSignIn = (event) =>{
         event.preventDefault();
         const form = event.target;
