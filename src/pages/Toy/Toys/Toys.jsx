@@ -3,17 +3,27 @@ import ToyCart from '../ToyCart/ToyCart';
 
 const Toys = () => {
     const [toys, setToys] = useState([]);
+    const [query, setQuery] = useState("");
+
     useEffect(() => {
         fetch('http://localhost:5000/cars')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
+
+    const handleChange = event =>{
+        const name = event.target.value;
+        setQuery(name)
+    }
+
     return (
         <div>
             <div className=" w-full my-10">
                 <div className='flex justify-end'>
-                    <input type="text" placeholder="Search" className="input input-bordered" />
-                    <input type="submit" value="serch" className='btn btn-ghost' />
+                    <input type="text"
+                    placeholder="Search" 
+                    className="input input-bordered"
+                    onChange={handleChange} />
                 </div>
                 <table className="table w-full ">
                     {/* head */}
@@ -29,7 +39,7 @@ const Toys = () => {
                     </thead>
                     <tbody >
                         {
-                            toys.map(toy => <ToyCart
+                            toys.filter((toyname => toyname.name.includes(query))).map(toy => <ToyCart
                                 key={toy._id}
                                 toy={toy}
                             >
