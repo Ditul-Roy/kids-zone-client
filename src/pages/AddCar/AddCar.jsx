@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import useTitleBar from '../../shared/TitleBar/UseTitleBar';
+import Swal from 'sweetalert2';
 
 const AddCar = () => {
     const navigate = useNavigate();
@@ -31,7 +32,12 @@ const AddCar = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data);
-            alert('new car added')
+            Swal.fire({
+                title: 'success!',
+                text: 'Wow! Good job ',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
             navigate('/')
             
             

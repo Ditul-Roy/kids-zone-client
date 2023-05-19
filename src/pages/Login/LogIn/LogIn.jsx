@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
 import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
+import Swal from 'sweetalert2';
 
 const LogIn = () => {
     const {loggedUserWithEmail} = useContext(AuthContext);
@@ -21,11 +22,23 @@ const LogIn = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            Swal.fire({
+                title: 'success!',
+                text: 'Wow! Good job ',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
             navigate(from)
             form.reset();
         })
         .catch(error =>{
-            console.log(error);
+            const err = error.message;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: err
+              })
         })
     }
 

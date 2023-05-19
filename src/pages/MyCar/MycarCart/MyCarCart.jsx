@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MyCarCart = ({ userCar, handleDeleteCar }) => {
     // console.log(userCar);
-    
+
     const { _id, img, name, price, quantity } = userCar;
     return (
         <tr>
@@ -24,8 +24,8 @@ const MyCarCart = ({ userCar, handleDeleteCar }) => {
             </td>
             <td>{price}</td>
             <th>
-                <Link to={`/update/${_id}`}><button className="btn btn-ghost btn-xs">u</button></Link>
-                <button onClick={(()=>handleDeleteCar(_id))} className="btn btn-ghost btn-xs">d</button>
+                <Link to={`/update/${_id}`}><button className="btn btn-circle btn-outline me-2">u</button></Link>
+                <button onClick={(() => handleDeleteCar(_id))} className="btn btn-circle btn-outline">X</button>
             </th>
         </tr >
     );

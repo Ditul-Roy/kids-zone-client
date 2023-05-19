@@ -4,6 +4,7 @@ import SocialLogin from '../../../shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const {createUerWithEmail} = useContext(AuthContext);
@@ -20,11 +21,23 @@ const SignUp = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            Swal.fire({
+                title: 'success!',
+                text: 'Wow! Good job ',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
             form.reset();
             updateUser(result.user, name, photo)
         })
         .catch(error =>{
-            console.log(error);
+            const err = error.message;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: err
+              })
         })
     }
 

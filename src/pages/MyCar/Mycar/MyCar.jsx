@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../AuthProvideer/AuthProvider';
 import MyCarCart from '../MycarCart/MyCarCart';
 import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
+import Swal from 'sweetalert2';
 
 const MyCar = () => {
     const { user } = useContext(AuthContext);
@@ -18,36 +19,34 @@ const MyCar = () => {
     }, []);
 
     const handleDeleteCar = (id) => {
-        const deleted = confirm('are you sure! you went to delete this item');
+        const deleted = Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        });
         if (deleted) {
-            fetch(`http://localhost:5000/cars/${id}`,{
+            fetch(`http://localhost:5000/cars/${id}`, {
                 method: 'DELETE'
             })
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    alert('deleted successfully');
-                    if(data.deletedCount > 0){
+                    if (data.deletedCount > 0) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
                         const remainingCars = userCars.filter(car => car._id !== id);
                         setUserCars(remainingCars)
                     }
                 })
         }
     }
-
-    // const updatedAddToCar = (id) => {
-    //     fetch(`http://localhost:5000/cars/${id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify()
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //     })
-    // }
 
     return (
         <div>

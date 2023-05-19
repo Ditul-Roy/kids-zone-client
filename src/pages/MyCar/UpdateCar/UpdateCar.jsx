@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitleBar from '../../../shared/TitleBar/UseTitleBar';
+import Swal from 'sweetalert2';
 
 const UpdateCar = () => {
     const carstoy = useLoaderData();
@@ -25,6 +26,12 @@ const UpdateCar = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            Swal.fire({
+                title: 'success!',
+                text: 'Updated succesfully ',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
         })
     }
     return (
