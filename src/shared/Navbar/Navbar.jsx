@@ -10,7 +10,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar bg-slate-200 p-4 rounded">
+            <div className="navbar bg-emerald-400 p-4 rounded">
                 <div className="navbar-start">
                     <img className='h-12 w-10' src={'https://i.ibb.co/C0wnfmh/images-q-tbn-ANd9-Gc-Tn-Bsjyi-Y02-QEzd-HK-j-Qw2zw-O8-CVWYi-Rkcjy-Q-usqp-CAU.jpg'} alt="" />
                     <Link to='/' className="btn btn-ghost normal-case text-xl">KidsZone</Link>

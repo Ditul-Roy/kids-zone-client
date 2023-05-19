@@ -64,7 +64,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className='mx-24 my-8'>
+    <div className='mx-24 my-8 bg-base-200 rounded'>
       <AuthProvider>
         <RouterProvider router={router} />
       </AuthProvider>

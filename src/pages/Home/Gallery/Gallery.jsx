@@ -9,7 +9,7 @@ const Gallery = () => {
             .then(data => setGalleries(data))
     }, [])
     return (
-        <div className='bg-gray-200 my-10 p-4'>
+        <div className=' my-10 p-4'>
             <h1 className='text-4xl text-bold text-center text-gray-800 my-10'>Please visit our car gallery</h1>
             <div className='grid grid-cols-3'>
             {
