@@ -9,6 +9,7 @@ const Relesed = () => {
         .then(response => response.json())
         .then(data => setUpcommings(data))
     }, [])
+
     return (
         <div>
             <p className='text-green-600 text-xl text-center'>upcomming</p>

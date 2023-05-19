@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const About = () => {
+
+    useEffect(() => {
+        Aos.init({duration: 2000});
+    },[])
     return (
-        <div className="hero bg-base-200">
+        <div className="hero bg-base-200" data-aos = 'fade-up'>
             <div className="hero-content flex-col lg:flex-row">
                 <img src={'https://i.ibb.co/27Q34gj/Stock-Snap-9-CNXOCMUPN.jpg'} className="max-w-sm rounded-lg shadow-2xl" />
                 <div>
