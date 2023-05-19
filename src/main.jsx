@@ -16,11 +16,13 @@ import MyCar from './pages/MyCar/Mycar/MyCar';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import UpdateCar from './pages/MyCar/UpdateCar/UpdateCar';
 import ToyDetails from './pages/Toy/ToyDetails/ToyDetails';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
