@@ -13,7 +13,7 @@ const MyCar = () => {
             .then(response => response.json())
             .then(data => {
                 setUserCars(data)
-                console.log(data);
+                // console.log(data);
             })
     }, []);
 
