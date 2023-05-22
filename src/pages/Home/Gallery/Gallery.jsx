@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'
 const Gallery = () => {
     const [galleries, setGalleries] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://toy-server-six.vercel.app/allcars')
             .then(res => res.json())
             .then(data => setGalleries(data))
     }, [])
@@ -17,7 +17,7 @@ const Gallery = () => {
     return (
         <div className=' my-10 p-4' data-aos = 'fade-up'>
             <h1 className='text-4xl text-bold text-center text-gray-800 my-10'>Please visit our car gallery</h1>
-            <div className='grid grid-cols-3'>
+            <div className='grid lg:grid-cols-3'>
             {
                 galleries.map(gallery => <GalleryCard
                 key={gallery._id}

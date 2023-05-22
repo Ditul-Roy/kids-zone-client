@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateCar = () => {
     const carstoy = useLoaderData();
     console.log(carstoy);
-    const {_id, price, quantity, details} = carstoy;
+    const { _id, price, quantity, details } = carstoy;
     useTitleBar('update car')
 
     const handleUpdateCar = (event) => {
@@ -15,24 +15,24 @@ const UpdateCar = () => {
         const price = form.price.value;
         const quantity = form.quantity.value;
         const details = form.details.value;
-        const update = {price, quantity, details};
-        fetch(`http://localhost:5000/cars/${_id}`, {
+        const update = { price, quantity, details };
+        fetch(`https://toy-server-six.vercel.app/allcars/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(update)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            Swal.fire({
-                title: 'success!',
-                text: 'Updated succesfully ',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              })
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Updated succesfully ',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            })
     }
     return (
         <div>
@@ -55,7 +55,9 @@ const UpdateCar = () => {
                     </label>
                     <input type="text" name='details' defaultValue={details} className="input input-bordered" />
                 </div>
-                <input type="submit" value="update" className="btn btn-ghost btn-xs" />
+                <div className="form-control my-6">
+                    <input type="submit" value="update" className="btn btn-ghost" />
+                </div>
             </form>
         </div>
     );

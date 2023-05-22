@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import SportsTab from '../SportsTab/SportsTab';
 import TruckTab from '../TruckTab/TruckTab';
 import BusTab from './BusTab/BusTab';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Tabs = () => {
     const [toggle, settoggle] = useState(1);
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://toy-server-six.vercel.app/allcars')
             .then(res => res.json())
             .then(data => setCars(data))
     }, [])
@@ -16,20 +18,24 @@ const Tabs = () => {
     const handleUpdateToggle = (id) => {
         settoggle(id)
     }
+
+    useEffect(() => {
+        Aos.init({duration: 3000});
+    },[])
     return (
-        <div className='border-slate-900 border-2 rounded my-8'>
-            <h2 className='text-4xl text-gray-600 text-center my-4'>Our Car toys for your child</h2>
+        <div className='border-slate-900 border-2 rounded my-8' data-aos = 'fade-down'>
+            <h2 className='text-4xl text-gray-600 text-center my-4'>Our Car toys for your kids</h2>
             <p className='text-center text-xl text-green-700 mb-4'>If you went to buy some cars. please visit our shop.</p>
             <div>
-                <ul className='flex justify-end bg-gray-200 px-8 py-4'>
-                    <li className='me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '><button onClick={() => handleUpdateToggle(1)}>Sports car</button></li>
-                    <li className='me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '> <button onClick={() => handleUpdateToggle(2)}>Truck</button></li>
-                    <li className='me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '><button onClick={() => handleUpdateToggle(3)}>Bus</button></li>
+                <ul className='flex lg:justify-end bg-gray-200 px-8 py-4'>
+                    <li className='lg:me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '><button onClick={() => handleUpdateToggle(1)}>Sports car</button></li>
+                    <li className='lg:me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '> <button onClick={() => handleUpdateToggle(2)}>Truck</button></li>
+                    <li className='lg:me-10 text-gray-400 text-xl hover:bg-gray-400 hover:text-white p-2 rounded '><button onClick={() => handleUpdateToggle(3)}>Bus</button></li>
                 </ul>
             </div>
             <div className={toggle === 1 ? 'block' : 'hidden'}>
                 <h1 className='text-2xl text-center text-bold'>Sports car</h1>
-                <div className='grid lg:grid-cols-2'>
+                <div className='grid lg:grid-cols-2'data-aos = 'zoom-in-lef' >
                     {
                         cars.slice(0, 2).map(scar => <SportsTab
                             key={scar._id}
@@ -52,7 +58,7 @@ const Tabs = () => {
             </div>
             <div className={toggle === 3 ? 'block' : 'hidden'}>
                 <h3 className='text-2xl text-center text-bold'>bus</h3>
-                <div className='grid lg:grid-cols-2'>
+                <div className='grid lg:grid-cols-2' >
                     {
                         cars.slice(7, 9).map(bus => <BusTab
                         key={bus._id}

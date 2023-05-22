@@ -1,6 +1,6 @@
 import React from 'react';
+import { FaAlignLeft, FaArrowLeft } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
-
 const ToyDetails = () => {
     const carDetails = useLoaderData();
     console.log(carDetails);
@@ -12,14 +12,16 @@ const ToyDetails = () => {
                 <h3 className='text-4xl text-center text-bold text-blue-800 m-4'>View Details</h3>
                 <h2 className="card-title">Toy name: {name}</h2>
                 <p className='text-3xl text-bold'>Seller name: {seller_name}</p>
-                <p className='text-green-600'>Category: {category}</p>
+                <p className='text-green-700'>Category: {category}</p>
                 <p className='text-xl'>{details}</p>
                 <p>Price: ${price}</p>
                 <p>Quantity: {quantity}</p>
                 <div className='flex justify-between card-actions'>
-                    <p>{rating}</p>
+                    <div className='flex text-green-600 my-4'>
+                        <p>Rating: {rating}stars</p>
+                    </div>
                 </div>
-                <Link to='/toys' className='btn'>back to shop</Link>
+                <Link to='/toys' className='btn btn-primary'><FaArrowLeft></FaArrowLeft> back to shop</Link>
             </div>
         </div>
     );

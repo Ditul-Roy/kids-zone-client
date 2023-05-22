@@ -5,7 +5,7 @@ const Relesed = () => {
     const [upcommings, setUpcommings] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:5000/others')
+        fetch('https://toy-server-six.vercel.app/others')
         .then(response => response.json())
         .then(data => setUpcommings(data))
     }, [])

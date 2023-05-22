@@ -22,7 +22,7 @@ const AddCar = () => {
         const newCar = {name, seller_name, email, category, price, rating, quantity, details, img};
         console.log(newCar);
 
-        fetch('http://localhost:5000/cars', {
+        fetch('https://toy-server-six.vercel.app/allcars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

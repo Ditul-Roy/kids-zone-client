@@ -10,7 +10,7 @@ const MyCar = () => {
     useTitleBar('my car')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cars?email=${user.email}`)
+        fetch(`https://toy-server-six.vercel.app/onlycars?email=${user.email}`)
             .then(response => response.json())
             .then(data => {
                 setUserCars(data)
@@ -27,14 +27,15 @@ const MyCar = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-        });
+        })
         if (deleted) {
-            fetch(`http://localhost:5000/cars/${id}`, {
+            fetch(`https://toy-server-six.vercel.app/allcars/${id}`, {
                 method: 'DELETE'
             })
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
+                    });
                     if (data.deletedCount > 0) {
                         Swal.fire(
                             'Deleted!',
@@ -44,7 +45,7 @@ const MyCar = () => {
                         const remainingCars = userCars.filter(car => car._id !== id);
                         setUserCars(remainingCars)
                     }
-                })
+
         }
     }
 
