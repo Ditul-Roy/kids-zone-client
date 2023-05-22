@@ -14,7 +14,7 @@ const ToyCart = ({ toy }) => {
                 </div>
             </td>
             <td><div className="font-bold">{name}</div></td>
-            <td>{seller_name ? seller_name : 'unwkown'}</td>
+            <td>{ seller_name ? seller_name : 'unwkown'}</td>
             <td>{price}</td>
             <td>{quantity}</td>
             <th>

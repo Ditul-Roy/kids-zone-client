@@ -8,7 +8,7 @@ const About = () => {
         Aos.init({duration: 2000});
     },[])
     return (
-        <div className="lg:hero bg-base-200" data-aos = 'fade-left'>
+        <div className="lg:hero my-10 bg-base-200" data-aos = 'fade-left'>
             <div className="hero-content flex-col lg:flex-row">
                 <img src={'https://i.ibb.co/27Q34gj/Stock-Snap-9-CNXOCMUPN.jpg'} className="lg:max-w-sm rounded-lg shadow-2xl" />
                 <div>

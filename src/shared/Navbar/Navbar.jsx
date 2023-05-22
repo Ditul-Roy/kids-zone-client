@@ -23,16 +23,16 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center lg:flex ">
                     <ul className={`px-1 lg:flex justify-between absolute lg:static duration-500 lg:pt-4  ${isOpen ? 'top-20 ' : '-top-60'}`}>
-                        <li><NavLink to='/' className={({ Active }) => (Active ? 'text-blue-400' : ' text-xl lg:me-4')}>Home</NavLink></li>
-                         <li><NavLink to='/toys' className={({ Active }) => (Active ? 'text-blue-400' : ' text-xl lg:me-4')}>All cars</NavLink></li>
-                        <li><NavLink to='/blog' className={({ Active }) => (Active ? 'text-blue-400' : ' text-xl lg:me-4')}>blog</NavLink></li>
+                        <li><NavLink to='/' className="text-blue-600 hover:text-white text-xl me-4">Home</NavLink></li>
+                         <li><NavLink to='/toys' className="text-blue-600 hover:text-white text-xl me-4">All cars</NavLink></li>
+                        <li><NavLink to='/blog' className="text-blue-600 hover:text-white text-xl me-4">blog</NavLink></li>
                         {
                             user ? <>
-                                <li><NavLink to='/mycar' className={({ Active }) => (Active ? 'text-blue-400' : ' text-xl lg:me-4')}>My cars</NavLink></li>
-                                <li><NavLink to='/addcar' className={({ Active }) => (Active ? 'text-blue-400' : ' text-xl lg:me-4')}>Add cars</NavLink></li>
-                                <img className='h-12 w-12' src={user.photoURL} title={user.displayName} alt="" />
-                                <li><button onClick={handleLogout} className='btn text-white'>LogOut</button></li>
-                            </> :  <Link className='btn lg:ms-80' to='/login'>Log in</Link>
+                                <li><NavLink to='/mycar' className="text-blue-600 hover:text-white text-xl me-4">My cars</NavLink></li>
+                                <li><NavLink to='/addcar' className="text-blue-600 hover:text-white text-xl me-4">Add cars</NavLink></li>
+                                <img className='h-12 w-12 mb-2' src={user.photoURL} title={user.displayName} alt="" />
+                                <li><button onClick={handleLogout} className='btn text-white mb-2'>LogOut</button></li>
+                            </> :  <Link className='btn lg:ms-80 mb-2' to='/login'>Log in</Link>
                         }
                     </ul>
                 </div>

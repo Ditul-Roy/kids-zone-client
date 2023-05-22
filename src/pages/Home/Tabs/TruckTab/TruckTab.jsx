@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
+
 
 const TruckTab = ({ truck }) => {
     const { _id, name, img, price, rating } = truck;
@@ -10,8 +14,11 @@ const TruckTab = ({ truck }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>{price}</p>
-                <p>{rating}</p>
+                <p>Price: {price}</p>
+                <div className='flex text-green-800 my-4'>
+                    <p className='text-xl me-4 mt-2'>Ratings :{rating}</p>
+                    <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+                </div>
                 <div className="card-actions">
                     <Link to={`/details/${_id}`}><button className="btn btn-primary">view Details</button></Link>
                 </div>

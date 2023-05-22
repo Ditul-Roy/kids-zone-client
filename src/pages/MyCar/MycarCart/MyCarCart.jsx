@@ -24,7 +24,7 @@ const MyCarCart = ({ userCar, handleDeleteCar }) => {
             </td>
             <td>{price}</td>
             <th>
-                <Link to={`/update/${_id}`}><button className="btn btn-circle btn-outline me-2">u</button></Link>
+                <Link to={`/update/${_id}`}><button className="btn btn-circle btn-outline me-2">U</button></Link>
                 <button onClick={(() => handleDeleteCar(_id))} className="btn btn-circle btn-outline">X</button>
             </th>
         </tr >

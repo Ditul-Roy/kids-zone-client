@@ -1,6 +1,9 @@
 import React from 'react';
 import { FaAlignLeft, FaArrowLeft } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
+
 const ToyDetails = () => {
     const carDetails = useLoaderData();
     console.log(carDetails);
@@ -18,7 +21,8 @@ const ToyDetails = () => {
                 <p>Quantity: {quantity}</p>
                 <div className='flex justify-between card-actions'>
                     <div className='flex text-green-600 my-4'>
-                        <p>Rating: {rating}stars</p>
+                        <p className='text-xl me-4 mt-2'>Ratings :{rating}</p>
+                        <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
                     </div>
                 </div>
                 <Link to='/toys' className='btn btn-primary'><FaArrowLeft></FaArrowLeft> back to shop</Link>

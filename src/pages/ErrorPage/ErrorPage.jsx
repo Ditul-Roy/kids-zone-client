@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
@@ -7,7 +8,7 @@ const ErrorPage = () => {
             <img className='mx-auto' src={'https://i.ibb.co/b5M9SXJ/oops-404-error-with-broken-robot-concept-illustration-114360-1932.jpg'} alt="" />
             <h1 className='text-6xl'>Oooops!</h1>
             <p className='text-3xl text-blue-600'>page not found</p>
-            <Link className='btn btn-primary my-10' to='/'>back to home</Link>
+            <Link className='btn btn-primary my-10' to='/'><FaArrowLeft/> back to home</Link>
         </div>
     );
 };
